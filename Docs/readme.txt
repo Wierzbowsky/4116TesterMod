@@ -40,6 +40,8 @@ in order to make it safer and more usable. Three mods were created for this proj
 
 2. Power mod: v1.2
 
+   This mod requires the Button mod to be installed!
+
    The power mod was created to disable the power on the chip's socket and only enable it during testing. This
    makes it safe to insert a DRAM chip and also quickly cuts off the power in case a chip is shorted or inserted
    in a wrong way. The simple relay module for Arduino was used to enable or disable +5v power to the socket and
