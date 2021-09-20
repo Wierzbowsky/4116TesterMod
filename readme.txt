@@ -52,6 +52,8 @@ in order to make it safer and more usable. Three mods were created for this proj
 
 3. OLED screen mod: v1.3
 
+   This mod requires at least the Button mod to be installed!
+
    To make the tester more informative an OLED screen was added into the project. As Arduino Nano has SCL and SDA
    signals available on A4 and A5 pins and those pins were used by the original tester's designer for the chip's
    socket, before the screen's installation those connections need to be rewired. A4 needs to be rewired to D10
