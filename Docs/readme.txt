@@ -83,8 +83,8 @@ And finally, 3D models of the case were created for the project. There's a wide 
 board and a narrow case for the tester's board by Muttley Black. Both cases can be used for installing the
 OLED screen's frame. If you only want the button and screen mods, you can use the narrow case. Please keep
 in mind that if you are installing the boards into these cases, you will need to make the socket's lever a bit
-longer by attaching a thin plastic or metal tube to it. The current case design is not ideal for installing
-the chips either, so it's recommended to use tweezers if you have trouble inserting or removing a chip.
+longer by attaching a thin plastic or metal tube to it. The current case's design is not ideal for inserting
+DRAM chips, so it's recommended to use tweezers if you have trouble inserting or removing a chip.
 
 The Gerber files for that board are located in the "Gerber" folder. The 3D models of the case as well as frames
 for the screen are also available in the "Case" folder. The "Original" folder contains the narrow case, the
