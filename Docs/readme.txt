@@ -10,8 +10,12 @@ Power the tester only with the USB cable connected to Ardino Nano's Mini/MicroUS
 
 IMPORTANT!
 It's recommended to use a computer's USB3 port to power the tester because USB3 provides enough current
-for the devide to work properly. You can also power the tester with any 5v 500mA rated power supply.
+for the device to work properly. You can also power the tester with any 5v 500mA rated power supply that
+is connected to the Mini/MicroUSB connector (for example phone charger).
 
+
+ABOUT
+-----
 
 The original project was created in November 2017. The code was officially released in March 2020. Most of the
 code and design was coming from http://forum.defence-force.org/viewtopic.php?p=15035&sid=17bf402b9c2fd97c8779668b8dde2044
@@ -34,15 +38,15 @@ in order to make it safer and more usable. Three mods were created for this proj
    The firmware was modified to use the button not to reset the Arduino, but to start a test and then confirm
    the test result. Some led blinking was added to indicate in which mode the tester is at any moment. If
    both LEDs are blinking, the tester awaits a chip to be inserted and the button to be pressed for the test
-   to start. If green or red LED is lit, this indicated successful or failed test. The serial interface
-   message were improved to report the test results, tester's version and when the tester needs user's
+   to start. If green or red LED is lit, this indicates a successful or a failed test. The serial interface
+   messages were improved to report the test results, tester's version and when the tester needs a user's
    interaction.
 
 2. Power mod: v1.2
 
    This mod requires the Button mod to be installed!
 
-   The power mod was created to disable the power on the chip's socket and only enable it during testing. This
+   The power mod was created to disable the power on the chip's socket and to only enable it during testing. This
    makes it safe to insert a DRAM chip and also quickly cuts off the power in case a chip is shorted or inserted
    in a wrong way. The simple relay module for Arduino was used to enable or disable +5v power to the socket and
    +12v and -5v converters. The 5v track needs to be cut in 2 places, one wire needs to be added from the cut
@@ -72,11 +76,15 @@ in order to make it safer and more usable. Three mods were created for this proj
    messages were commented out to save space in the firmware.
 
 When applying the mods, don't forget to upload the corresponding firmware version into Arduino Nano. See the
-"Firmware" folder for the available firmwares.
+"Firmware" folder for the available firmwares. Some Arduinos may require selecting "older Bootloader" option
+in the IDE to be flashed.
 
 And finally, 3D models of the case were created for the project. There's a wide case that can hold the relay
 board and a narrow case for the tester's board by Muttley Black. Both cases can be used for installing the
-OLED screen's frame. If you only want the button and screen mods, you can use the narrow case.
+OLED screen's frame. If you only want the button and screen mods, you can use the narrow case. Please keep
+in mind that if you are installing the boards into these cases, you will need to make the socket's lever a bit
+longer by attaching a thin plastic or metal tube to it. The current case design is not ideal for installing
+the chips either, so it's recommended to use tweezers if you have trouble inserting or removing a chip.
 
 The Gerber files for that board are located in the "Gerber" folder. The 3D models of the case as well as frames
 for the screen are also available in the "Case" folder. The "Original" folder contains the narrow case, the

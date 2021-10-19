@@ -1,0 +1,38 @@
+1  A1 - Arduino Nano v3.x : Module:Arduino Nano 
+2  C1 - 100uF 16V : Capacitor THT:CP Radial D8.0mm P3.80mm 
+3  C2 - 470pF : Capacitor THT:C_Disc_D4.3mm W1.9mm P5.00mm 
+4  C3 - 470uF 16V : Capacitor THT:CP Radial D8.0mm P3.80mm 
+5  C4 - 330pF : Capacitor THT:C_Disc_D4.3mm W1.9mm P5.00mm 
+6  C5 - 100uF 16V : Capacitor THT:CP Radial D8.0mm P3.80mm 
+7  D1 - Green : LED THT:LED D5.0mm 
+8  D2 - Red : LED THT:LED D5.0mm 
+9  D3 - 1N5819 : Diode_THT:D_DO-41_SOD81_P10.16mm Horizontal 
+10 D4 - 1N5819 : Diode_THT:D_DO-41_SOD81_P10.16mm Horizontal 
+11 J1 - ZIF socket 16 pin : Socket:DIP_Socket-16 W4.3 W5.08 W7.62 W10.16 W10.9_3M 216-3340-00-0602J 
+12 J2 - 9v dc : Connector_BarrelJack:BarrelJack Horizontal 
+13 L1 - 2mH : Inductor THT:L Radial D6.0mm P4.00mm 
+14 L2 - 2mH : Inductor THT:L Radial D6.0mm P4.00mm 
+15 R1 - 470 Ohm : Resistor THT:R Axial_DINO207_L6.3mm D2.5mm P10.16mm Horizontal 
+16 R2 - 470 Ohm : Resistor THT:R Axial_DINO207_L6.3mm D2.5mm P10.16mm Horizontal 
+17 R3 - 1 Ohm : Resistor THT:R Axial_DINO207_L6.3mm D2.5mm P10.16mm Horizontal 
+18 R4 - 1.5 kOhm : Resistor THT:R Axial_DINO207_L6.3mm D2.5mm P10.16mm Horizontal 
+19 R5 - 13 kOhm : Resistor THT:R Axial_DINO207_L6.3mm D2.5mm P10.16mm Horizontal 
+20 R6 - 180 Ohm : Resistor THT:R Axial_DINO207_L6.3mm D2.5mm P10.16mm Horizontal 
+21 R7 - 2 Ohm  : Resistor THT:R Axial_DINO207_L6.3mm D2.5mm P10.16mm Horizontal 
+22 R8 - 3 kOhm : Resistor THT:R Axial_DINO207_L6.3mm D2.5mm P10.16mm Horizontal 
+23 R9 - l kOhm : Resistor THT:R Axial_DINO207_L6.3mm D2.5mm P10.16mm Horizontal 
+24 R10 - 150 Ohm : Resistor THT:R Axial_DINO207_L6.3mm D2.5mm P10.16mm Horizontal 
+25 R11 - 150 Ohm : Resistor THT:R Axial_DINO207_L6.3mm D2.5mm P10.16mm Horizontal 
+26 R12 - 150 Ohm : Resistor THT:R Axial_DINO207_L6.3mm D2.5mm P10.16mm Horizontal 
+27 R13 - 150 Ohm : Resistor THT:R Axial_DINO207_L6.3mm D2.5mm P10.16mm Horizontal 
+28 R14 - 150 Ohm : Resistor THT:R Axial_DINO207_L6.3mm D2.5mm P10.16mm Horizontal 
+29 R15 - 150 Ohm : Resistor THT:R Axial_DINO207_L6.3mm D2.5mm P10.16mm Horizontal 
+30 R16 - 150 Ohm : Resistor THT:R Axial_DINO207_L6.3mm D2.5mm P10.16mm Horizontal 
+31 R17 - 150 Ohm : Resistor THT:R Axial_DINO207_L6.3mm D2.5mm P10.16mm Horizontal 
+32 R18 - 150 Ohm : Resistor THT:R Axial_DINO207_L6.3mm D2.5mm P10.16mm Horizontal 
+33 R19 - 150 Ohm : Resistor THT:R Axial_DINO207_L6.3mm D2.5mm P10.16mm Horizontal 
+34 R20 - 150 Ohm : Resistor THT:R Axial_DINO207_L6.3mm D2.5mm P10.16mm Horizontal 
+35 R21 - 150 Ohm : Resistor THT:R Axial_DINO207_L6.3mm D2.5mm P10.16mm Horizontal 
+36 SW1 - SW_Push : Button_Switch THT:SW_PUSH-12mm 
+37 U1 - MC34063AP : Package_DIP:DIP-8 W7.62mm 
+38 U2 - MC34063AP : Package_DIP:DIP-8 W7.62mm 
