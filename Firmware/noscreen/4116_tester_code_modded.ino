@@ -36,7 +36,7 @@
 #define R_LED       9     //  Arduino D9 > Cathode on red LED. Anode connected through 470ohm resisor to +5VDC 
 #define G_LED       8     //  Arduino D8 > Cathode on green LED. Anode connected through 470ohm resisor to +5VDC
 
-#define BUTT        A6    //  Arduino A6 > Start button
+#define BUTN        20    //  Arduino A6 > Start button
 #define PWR         12    //  Arduino D12 > Power on/off
 
 #define BUS_SIZE    7
@@ -185,19 +185,20 @@ boolean Test1(int v)
 
 int ButtonCheck(void)
 {
-  while(1)
-  {
-    delay(10);
-    buttondown = analogRead(BUTT);
-    if(buttondown) return buttondown;
-    else while(1)
+  const int divider = 10;
+  int cnt;
+
+    for (cnt = 0; cnt < divider; cnt++)
     {
-      delay(10);
-      buttondown = analogRead(BUTT);
-      if(buttondown) return 0;
+      delay(100);
+      buttondown = analogRead(BUTN);
+      if (!buttondown) break;
     }
-  }
+    while(analogRead(BUTN)== 0) delay (50);
+    if (!buttondown) return 0;
+    else return 1;
 }
+
 
 void setup() {
   int i;
@@ -225,7 +226,7 @@ void setup() {
 
   pinMode(DO, INPUT);
   
-  pinMode(BUTT, INPUT_PULLUP);  // for Start button (connected to A6)
+  //pinMode(BUTN, INPUT_PULLUP);  // for Start button (connected to A6)
   
   pinMode(PWR, OUTPUT);  // for power on/off
   
@@ -252,9 +253,6 @@ void setup() {
 
 void loop()
 {
-  const int divider = 10;
-  int cnt;
-
   digitalWrite(PWR, LOW); // power off
 
   Serial.println("Ready for testing. Press a button to start...");
@@ -266,25 +264,13 @@ void loop()
     digitalWrite(G_LED, LOW);
     digitalWrite(13, 1); // Nano led on
     
-    for (cnt = 0; cnt < divider; cnt++)
-    {
-      delay(100);
-      buttondown = ButtonCheck();
-      if (!buttondown) break;
-    }
-    if (!buttondown) break;
+    if (!ButtonCheck()) break;
     
     digitalWrite(R_LED, HIGH);
     digitalWrite(G_LED, HIGH);
     digitalWrite(13, 0); // Nano led off
     
-    for (cnt = 0; cnt < divider; cnt++)
-    {
-      delay(100);
-      buttondown = ButtonCheck();
-      if (!buttondown) break;
-    }
-    if (!buttondown) break;
+    if (!ButtonCheck()) break;
   }
 
   // LEDS off
@@ -350,6 +336,7 @@ void loop()
         {
           // Test passed
           TestOK();
+          delay(1000);
           while(ButtonCheck());
         }
       }

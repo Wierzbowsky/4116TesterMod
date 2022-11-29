@@ -1,7 +1,7 @@
 --------------------------------------------------------------------------------
 4116 DRAM Tester v3.0
 Firmware fix by Uffe Lund-Hansen, 2017-2020
-Mods by Alex Wierzbowsky [RBSC], 2021
+Mods by Alex Wierzbowsky [RBSC], 2021-2022
 --------------------------------------------------------------------------------
 
 WARNING!

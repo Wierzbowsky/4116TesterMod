@@ -6,7 +6,6 @@
 // by forum member "iss" and modified to work with 4116 D ram by me Uffe Lund-Hansen, Frostbox Labs. 
 //
 // Mod: The firmware was modified by Wierzbowsky [RBSC] in September 2021. Mod v1.3
-//
 // Board: v3.0 with the push button disconnected from RST and connected to A6 of Arduino Nano
 //
 // The additional relay module can be connected to the board to enable the power on the
@@ -221,18 +220,32 @@ boolean Test1(int v)
 
 int ButtonCheck(void)
 {
-  while(1)
-  {
-    delay(10);
-    buttondown = analogRead(BUTN);
-    if(buttondown) return buttondown;
-    else while(1)
+  const int divider = 10;
+  int cnt;
+
+//  if (digitalRead(BUTN) == LOW)
+//  {
+//    while(digitalRead(BUTN)== LOW) delay (50);
+//    return 0;
+//  }
+//  else return 1;
+
+    for (cnt = 0; cnt < divider; cnt++)
     {
-      delay(10);
+      delay(100);
       buttondown = analogRead(BUTN);
-      if(buttondown) return 0;
+      if (!buttondown) break;
     }
-  }
+    while(analogRead(BUTN)== 0) delay (50);
+    if (!buttondown) return 0;
+    else return 1;
+
+//  if (analogRead(BUTN) == 0)
+//  {
+//    while(analogRead(BUTN)== 0) delay (50);
+//    return 0;
+//  }
+//  else return 1;
 }
 
 void ClearSpace()
@@ -285,7 +298,7 @@ void setup() {
 
   pinMode(DO, INPUT);
   
-  pinMode(BUTN, INPUT_PULLUP);  // for Start button (connected to D11)
+ // pinMode(BUTN, INPUT_PULLUP);  // for Start button (connected to A6)
   
   pinMode(PWR, OUTPUT);  // for power on/off
   
@@ -312,9 +325,6 @@ void setup() {
 
 void loop()
 {
-  const int divider = 10;
-  int cnt;
-
   digitalWrite(PWR, LOW); // power off
 
 //  Serial.println("Ready for testing. Press a button to start...");
@@ -335,13 +345,7 @@ void loop()
     digitalWrite(G_LED, LOW);
     digitalWrite(NLED, 1); // Nano led on
     
-    for (cnt = 0; cnt < divider; cnt++)
-    {
-      delay(100);
-      buttondown = ButtonCheck();
-      if (!buttondown) break;
-    }
-    if (!buttondown) break;
+    if (!ButtonCheck()) break;
 
     ClearSpace();
     display.setCursor(4,40);
@@ -354,13 +358,7 @@ void loop()
     digitalWrite(G_LED, HIGH);
     digitalWrite(NLED, 0); // Nano led off
     
-    for (cnt = 0; cnt < divider; cnt++)
-    {
-      delay(100);
-      buttondown = ButtonCheck();
-      if (!buttondown) break;
-    }
-    if (!buttondown) break;
+   if (!ButtonCheck()) break;
   }
 
   // LEDS off
@@ -444,6 +442,7 @@ void loop()
           
           // Test passed
           TestOK();
+          delay(1000);
           while(ButtonCheck());
         }
       }
