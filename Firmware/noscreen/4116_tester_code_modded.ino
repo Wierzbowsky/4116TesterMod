@@ -1,5 +1,5 @@
 //
-// 4116 DRAM Tester Firmware. v3.0
+// 4116 DRAM Tester Firmware. v3.1
 //
 // Created in November 2017. Code commented and posted in March 2020. 
 // Most of the code and design is from http://forum.defence-force.org/viewtopic.php?p=15035&sid=17bf402b9c2fd97c8779668b8dde2044
@@ -290,9 +290,9 @@ void loop()
   noInterrupts();
   if (Test1(0) == false)
   {
-    noInterrupts();
-    while(ButtonCheck());
     interrupts();
+    delay(1000);
+    while(ButtonCheck());
     return;
   }
   else
@@ -303,8 +303,9 @@ void loop()
     noInterrupts();
     if (Test1(1) == false)
     {
-      while(ButtonCheck());
       interrupts();
+      delay(1000);
+      while(ButtonCheck());
       return;
 
     }
@@ -316,8 +317,9 @@ void loop()
       noInterrupts();
       if (Test2(0) == false)
       {
-        while(ButtonCheck());
         interrupts();
+        delay(1000);
+        while(ButtonCheck());
         return;
       }
       else
@@ -328,8 +330,9 @@ void loop()
         noInterrupts();
         if (Test2(1) == false)
         {
-          while(ButtonCheck());
           interrupts();
+          delay(1000);
+          while(ButtonCheck());
           return;
         }
         else
